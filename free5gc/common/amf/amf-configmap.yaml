@@ -13,7 +13,7 @@ data:
     configuration:
       amfName: AMF # the name of this AMF
       ngapIpList:  # the IP list of N2 interfaces on this AMF
-        - 10.10.2.1
+        - 10.10.3.200
       sbi: # Service-based interface information
         scheme: http # the protocol for sbi (http or https)
         registerIPv4: amf-namf # IP used to register to NRF
@@ -45,9 +45,9 @@ data:
             mnc: 01 # Mobile Network Code (2 or 3 digits string, digit: 0~9)
           snssaiList: # the S-NSSAI (Single Network Slice Selection Assistance Information) list supported by this AMF
             - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
-              sd: 000001 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+              sd: FFFFFF # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
             - sst: 1 # Slice/Service Type (uinteger, range: 0~255)
-              sd: 000002 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
+              sd: 000001 # Slice Differentiator (3 bytes hex string, range: 000000~FFFFFF)
       supportDnnList:  # the DNN (Data Network Name) list supported by this AMF
         - internet
         - streaming
@@ -112,8 +112,9 @@ data:
     # ReportCaller: enable the caller report or not, value: true or false
     logger:
       AMF:
-        debugLevel: info
-        ReportCaller: false
+        #debugLevel: info
+        debugLevel: trace
+        ReportCaller: true
       NAS:
         debugLevel: info
         ReportCaller: false
@@ -121,7 +122,7 @@ data:
         debugLevel: info
         ReportCaller: false
       NGAP:
-        debugLevel: info
+        debugLevel: debug # TT was info
         ReportCaller: false
       Aper:
         debugLevel: info

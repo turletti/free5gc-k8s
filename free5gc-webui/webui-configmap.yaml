@@ -4,6 +4,7 @@ metadata:
   name: webui-configmap
   labels:
     app: free5gc
+    nf: webui
 data:
   webuicfg.yaml: |
     info:

@@ -4,6 +4,7 @@ metadata:
   name: webui-service
   labels:
     app: free5gc
+    nf: webui
 spec:
   type: NodePort
   ports:
@@ -11,3 +12,4 @@ spec:
       nodePort: 30505
   selector:
     app: free5gc
+    nf: webui

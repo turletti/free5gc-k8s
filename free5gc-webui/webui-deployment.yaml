@@ -4,15 +4,18 @@ metadata:
   name: free5gc-webui
   labels:
     app: free5gc
+    nf: webui
 spec:
   selector:
     matchLabels:
       app: free5gc
+      nf: webui
   replicas: 1
   template:
     metadata:
       labels:
         app: free5gc
+        nf: webui
     spec:
       initContainers:
       - name: wait-mongo
